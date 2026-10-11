@@ -1,5 +1,6 @@
 ---
 // Raíz: envía a /ar si el navegador está en árabe, si no a /en.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <!doctype html>
 <html lang="en">
@@ -7,13 +8,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Coffee Cocoa · Dubai</title>
-  <link rel="alternate" hreflang="en" href="/en/" />
-  <link rel="alternate" hreflang="ar" href="/ar/" />
-  <meta http-equiv="refresh" content="1; url=/en/" />
+  <link rel="alternate" hreflang="en" href={`${base}/en/`} />
+  <link rel="alternate" hreflang="ar" href={`${base}/ar/`} />
+  <meta http-equiv="refresh" content={`1; url=${base}/en/`} />
   <style>html,body{margin:0;height:100%;background:#1A0F0A}</style>
-  <script is:inline>
+  <script is:inline define:vars={{ base }}>
     var l = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
-    location.replace(l.toLowerCase().indexOf('ar') === 0 ? '/ar/' : '/en/');
+    location.replace(l.toLowerCase().indexOf('ar') === 0 ? base + '/ar/' : base + '/en/');
   </script>
 </head>
 <body></body>

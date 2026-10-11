@@ -20,7 +20,10 @@ const t = lang === 'ar' ? ar : en;
 const dir = lang === 'ar' ? 'rtl' : 'ltr';
 const other = lang === 'ar' ? 'en' : 'ar';
 const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(t.wa.message)}`;
-const img = (n) => `/images/${n}.webp`;
+// Ruta base ("/" en dominio propio, "/coffee-cocoa/" en GitHub Pages)
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const abs = Astro.site ? new URL(Astro.site).origin + base : site.url;
+const img = (n) => `${base}/images/${n}.webp`;
 const year = new Date().getFullYear();
 
 const gallery = [
@@ -38,8 +41,8 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CafeOrCoffeeShop',
   name: site.name,
-  url: `${site.url}/${lang}/`,
-  image: `${site.url}/images/16-pared-estanteria-naranja.webp`,
+  url: `${abs}/${lang}/`,
+  image: `${abs}/images/16-pared-estanteria-naranja.webp`,
   servesCuisine: ['Coffee', 'Spanish pastry'],
   address: {
     '@type': 'PostalAddress',
@@ -59,16 +62,16 @@ const jsonLd = {
   <title>{t.meta.title}</title>
   <meta name="description" content={t.meta.description} />
   <meta name="theme-color" content="#1A0F0A" />
-  <link rel="canonical" href={`${site.url}/${lang}/`} />
-  <link rel="alternate" hreflang="en" href={`${site.url}/en/`} />
-  <link rel="alternate" hreflang="ar" href={`${site.url}/ar/`} />
-  <link rel="alternate" hreflang="x-default" href={`${site.url}/en/`} />
+  <link rel="canonical" href={`${abs}/${lang}/`} />
+  <link rel="alternate" hreflang="en" href={`${abs}/en/`} />
+  <link rel="alternate" hreflang="ar" href={`${abs}/ar/`} />
+  <link rel="alternate" hreflang="x-default" href={`${abs}/en/`} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={t.meta.title} />
   <meta property="og:description" content={t.meta.description} />
-  <meta property="og:image" content={`${site.url}/images/16-pared-estanteria-naranja.webp`} />
+  <meta property="og:image" content={`${abs}/images/16-pared-estanteria-naranja.webp`} />
   <meta property="og:locale" content={lang === 'ar' ? 'ar_AE' : 'en_AE'} />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
   <link rel="preload" as="image" href={img('16-pared-estanteria-naranja')} />
   <script is:inline>
     try {
@@ -91,7 +94,7 @@ const jsonLd = {
 
   <!-- Header -->
   <header class="site-header">
-    <a href={`/${lang}/`} class="wordmark" aria-label={site.name}>COCOA</a>
+    <a href={`${base}/${lang}/`} class="wordmark" aria-label={site.name}>COCOA</a>
     <nav class="main-nav" aria-label="Main">
       <a href="#story">{t.nav.story}</a>
       <a href="#menu">{t.nav.menu}</a>
@@ -99,7 +102,7 @@ const jsonLd = {
       <a href="#visit">{t.nav.visit}</a>
     </nav>
     <div class="header-actions">
-      <a class="lang-switch" href={`/${other}/`} hreflang={other} lang={other}>{t.nav.switch}</a>
+      <a class="lang-switch" href={`${base}/${other}/`} hreflang={other} lang={other}>{t.nav.switch}</a>
       <a class="btn btn-small" href={wa} target="_blank" rel="noopener">{t.nav.reserve}</a>
     </div>
   </header>
@@ -245,7 +248,7 @@ const jsonLd = {
     <p>{t.footer.tag}</p>
     <div class="footer-row">
       <span>© {year} {site.name}. {t.footer.rights}</span>
-      <a class="lang-switch" href={`/${other}/`} hreflang={other} lang={other}>{t.nav.switch}</a>
+      <a class="lang-switch" href={`${base}/${other}/`} hreflang={other} lang={other}>{t.nav.switch}</a>
     </div>
   </footer>
 
