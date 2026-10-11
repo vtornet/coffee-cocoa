@@ -1,0 +1,260 @@
+---
+import en from '../i18n/en.json';
+import ar from '../i18n/ar.json';
+import { site } from '../config.js';
+import '@fontsource/cormorant-garamond/400.css';
+import '@fontsource/cormorant-garamond/400-italic.css';
+import '@fontsource/cormorant-garamond/500.css';
+import '@fontsource/manrope/200.css';
+import '@fontsource/manrope/300.css';
+import '@fontsource/manrope/400.css';
+import '@fontsource/manrope/500.css';
+import '@fontsource/noto-kufi-arabic/500.css';
+import '@fontsource/ibm-plex-sans-arabic/300.css';
+import '@fontsource/ibm-plex-sans-arabic/400.css';
+import '@fontsource/ibm-plex-sans-arabic/500.css';
+import '../styles/global.css';
+
+const { lang } = Astro.props;
+const t = lang === 'ar' ? ar : en;
+const dir = lang === 'ar' ? 'rtl' : 'ltr';
+const other = lang === 'ar' ? 'en' : 'ar';
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(t.wa.message)}`;
+const img = (n) => `/images/${n}.webp`;
+const year = new Date().getFullYear();
+
+const gallery = [
+  '10-sala-ventanales-2',
+  '12-detalle-sofa-lampara',
+  '09-sala-ventanales',
+  '06-barra-cafetera',
+  '04-sala-estanteria-acero',
+  '15-zona-sofa-acero',
+];
+const tabs = ['coffee', 'pastry', 'fresh'];
+const letters = ['C', 'O', 'C', 'O', 'A'];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CafeOrCoffeeShop',
+  name: site.name,
+  url: `${site.url}/${lang}/`,
+  image: `${site.url}/images/16-pared-estanteria-naranja.webp`,
+  servesCuisine: ['Coffee', 'Spanish pastry'],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    addressLocality: site.address.locality,
+    addressCountry: site.address.country,
+  },
+  telephone: site.phoneDisplay,
+  sameAs: [site.instagram],
+};
+---
+<!doctype html>
+<html lang={lang} dir={dir}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{t.meta.title}</title>
+  <meta name="description" content={t.meta.description} />
+  <meta name="theme-color" content="#1A0F0A" />
+  <link rel="canonical" href={`${site.url}/${lang}/`} />
+  <link rel="alternate" hreflang="en" href={`${site.url}/en/`} />
+  <link rel="alternate" hreflang="ar" href={`${site.url}/ar/`} />
+  <link rel="alternate" hreflang="x-default" href={`${site.url}/en/`} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={t.meta.title} />
+  <meta property="og:description" content={t.meta.description} />
+  <meta property="og:image" content={`${site.url}/images/16-pared-estanteria-naranja.webp`} />
+  <meta property="og:locale" content={lang === 'ar' ? 'ar_AE' : 'en_AE'} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" as="image" href={img('16-pared-estanteria-naranja')} />
+  <script is:inline>
+    try {
+      if (sessionStorage.getItem('cc-intro') || matchMedia('(prefers-reduced-motion: reduce)').matches)
+        document.documentElement.classList.add('no-intro');
+    } catch (e) {}
+    document.documentElement.classList.add('js');
+  </script>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</head>
+<body>
+  <!-- Intro -->
+  <div id="intro" aria-hidden="true">
+    <div class="intro-light"></div>
+    <div class="intro-word">
+      {letters.map((l) => <span class="intro-letter">{l}</span>)}
+    </div>
+    <button class="intro-skip" type="button">{t.nav.skip}</button>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href={`/${lang}/`} class="wordmark" aria-label={site.name}>COCOA</a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="#story">{t.nav.story}</a>
+      <a href="#menu">{t.nav.menu}</a>
+      <a href="#space">{t.nav.space}</a>
+      <a href="#visit">{t.nav.visit}</a>
+    </nav>
+    <div class="header-actions">
+      <a class="lang-switch" href={`/${other}/`} hreflang={other} lang={other}>{t.nav.switch}</a>
+      <a class="btn btn-small" href={wa} target="_blank" rel="noopener">{t.nav.reserve}</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero-media">
+        <img src={img('16-pared-estanteria-naranja')} alt="" fetchpriority="high" />
+      </div>
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <p class="eyebrow hero-eyebrow">{t.hero.eyebrow}</p>
+        <h1 class="hero-title">
+          <span class="line"><span>{t.hero.line1}</span></span>
+          <span class="line accent"><span>{t.hero.line2}</span></span>
+        </h1>
+        <p class="hero-sub">{t.hero.sub}</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#menu">{t.hero.ctaMenu}</a>
+          <a class="btn btn-ghost" href={wa} target="_blank" rel="noopener">{t.hero.ctaReserve}</a>
+        </div>
+      </div>
+      <div class="scroll-cue"><span>{t.hero.scroll}</span><i></i></div>
+    </section>
+
+    <!-- Story -->
+    <section class="story" id="story">
+      <div class="story-text">
+        <p class="eyebrow reveal">{t.story.eyebrow}</p>
+        <h2 class="section-title reveal">{t.story.title}</h2>
+        <p class="reveal">{t.story.p1}</p>
+        <p class="reveal">{t.story.p2}</p>
+        <blockquote class="reveal">{t.story.quote}</blockquote>
+      </div>
+      <div class="story-media">
+        <figure class="story-img a"><img src={img('12-detalle-sofa-lampara')} alt="" loading="lazy" data-parallax="-12" /></figure>
+        <figure class="story-img b"><img src={img('06-barra-cafetera')} alt="" loading="lazy" data-parallax="10" /></figure>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        {[0, 1].map(() => (
+          <div class="marquee-group">
+            {t.marquee.map((m) => <span>{m}<i>✦</i></span>)}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Menu -->
+    <section class="menu" id="menu">
+      <div class="menu-head">
+        <p class="eyebrow reveal">{t.menu.eyebrow}</p>
+        <h2 class="section-title reveal">{t.menu.title}</h2>
+      </div>
+      <div class="menu-body">
+        <div class="menu-visual">
+          <img src={img('03-detalle-estanteria-mesas')} alt="" loading="lazy" data-parallax="-8" />
+        </div>
+        <div class="menu-panel">
+          <div class="tabs" role="tablist">
+            {tabs.map((k, i) => (
+              <button role="tab" id={`tab-${k}`} aria-controls={`panel-${k}`} aria-selected={i === 0 ? 'true' : 'false'} class="tab">{t.menu.tabs[k]}</button>
+            ))}
+          </div>
+          {tabs.map((k, i) => (
+            <ul role="tabpanel" id={`panel-${k}`} aria-labelledby={`tab-${k}`} class="menu-list" hidden={i !== 0}>
+              {t.menu.items[k].map((it) => (
+                <li class="menu-item">
+                  <div class="menu-item-row">
+                    <h3>{it.name}</h3>
+                    <span class="dots"></span>
+                    {it.price && <span class="price">{site.currency} {it.price}</span>}
+                  </div>
+                  <p>{it.desc}</p>
+                </li>
+              ))}
+            </ul>
+          ))}
+          <p class="menu-note">{t.menu.note}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Space: horizontal gallery -->
+    <section class="space" id="space">
+      <div class="space-pin">
+        <div class="space-intro">
+          <p class="eyebrow">{t.space.eyebrow}</p>
+          <h2 class="section-title">{t.space.title}</h2>
+          <p>{t.space.sub}</p>
+        </div>
+        <div class="space-track">
+          {gallery.map((g, i) => (
+            <figure class="space-card">
+              <div class="space-card-img"><img src={img(g)} alt={t.space.captions[i]} loading="lazy" /></div>
+              <figcaption><span>0{i + 1}</span>{t.space.captions[i]}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit -->
+    <section class="visit" id="visit">
+      <div class="visit-media">
+        <img src={img('07-fachada-calle')} alt="" loading="lazy" data-parallax="-8" />
+      </div>
+      <div class="visit-info">
+        <p class="eyebrow reveal">{t.visit.eyebrow}</p>
+        <h2 class="section-title reveal">{t.visit.title}</h2>
+        <dl>
+          <div class="reveal">
+            <dt>{t.visit.addressLabel}</dt>
+            <dd>{t.visit.address}<br /><a href={site.mapsUrl} target="_blank" rel="noopener" class="link">{t.visit.directions} →</a></dd>
+          </div>
+          <div class="reveal">
+            <dt>{t.visit.hoursLabel}</dt>
+            <dd>
+              {t.visit.hours.map((h) => (
+                <span class="hours-row"><span>{h.days}</span><span dir="ltr">{h.time}</span></span>
+              ))}
+            </dd>
+          </div>
+          <div class="reveal">
+            <dt>{t.visit.contactLabel}</dt>
+            <dd>
+              <a href={`tel:+${site.whatsapp}`} dir="ltr" class="phone">{site.phoneDisplay}</a><br />
+              <a href={wa} target="_blank" rel="noopener" class="link">{t.visit.whatsapp} →</a><br />
+              <a href={site.instagram} target="_blank" rel="noopener" class="link">{t.visit.instagram} →</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-word">COCOA</div>
+    <p>{t.footer.tag}</p>
+    <div class="footer-row">
+      <span>© {year} {site.name}. {t.footer.rights}</span>
+      <a class="lang-switch" href={`/${other}/`} hreflang={other} lang={other}>{t.nav.switch}</a>
+    </div>
+  </footer>
+
+  <a class="wa-float" href={wa} target="_blank" rel="noopener" aria-label={t.visit.whatsapp}>
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg>
+  </a>
+
+  <script>
+    import '../scripts/main.js';
+  </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "title": "Coffee Cocoa — Specialty Coffee & Spanish Pastry in Dubai",
+    "description": "A late-night specialty coffee house in Dubai with artisan pastry from small Spanish bakeries: piononos, churros, torrijas, freshly squeezed Spanish oranges and more."
+  },
+  "nav": {
+    "story": "Story",
+    "menu": "Menu",
+    "space": "The Space",
+    "visit": "Visit",
+    "reserve": "Reserve",
+    "switch": "العربية",
+    "skip": "Skip"
+  },
+  "hero": {
+    "eyebrow": "Specialty coffee · Spanish pastry · Dubai",
+    "line1": "Spanish soul.",
+    "line2": "Dubai nights.",
+    "sub": "Single-origin coffee, pastry from small family bakeries in Spain and a warm room that stays lit long after sunset.",
+    "ctaMenu": "View the menu",
+    "ctaReserve": "Reserve on WhatsApp",
+    "scroll": "Scroll"
+  },
+  "story": {
+    "eyebrow": "Our story",
+    "title": "From the obradores of Spain to the heart of Dubai.",
+    "p1": "In Spain, the best pastry still comes from small family workshops, the obradores, where recipes pass from one generation to the next. We travelled the country to find them.",
+    "p2": "Piononos from Santa Fe, almond tarts from Galicia, churros fried to order. Each one is paired with specialty coffee roasted for the espresso bar and served in a room built for slow evenings.",
+    "quote": "Every cup has its origin. Every pastry has its story."
+  },
+  "menu": {
+    "eyebrow": "Signature menu",
+    "title": "Made to be shared, slowly.",
+    "note": "Halal-certified products. Seasonal items may vary.",
+    "tabs": {
+      "coffee": "Coffee",
+      "pastry": "Spanish Pastry",
+      "fresh": "Fresh & Cold"
+    },
+    "items": {
+      "coffee": [
+        {
+          "name": "Espresso",
+          "desc": "Single-origin, pulled short and intense."
+        },
+        {
+          "name": "Cortado",
+          "desc": "The Spanish classic: espresso cut with warm milk."
+        },
+        {
+          "name": "Flat White",
+          "desc": "Double ristretto, silky micro-foam."
+        },
+        {
+          "name": "Spanish Latte",
+          "desc": "Espresso, milk and a ribbon of condensed milk."
+        },
+        {
+          "name": "Cocoa Signature",
+          "desc": "Espresso, dark Spanish chocolate and cream."
+        },
+        {
+          "name": "Pour Over",
+          "desc": "Rotating single origins, brewed by hand."
+        }
+      ],
+      "pastry": [
+        {
+          "name": "Piononos de Ysla",
+          "desc": "Rolled sponge soaked in syrup, crowned with toasted cream. From Santa Fe, Granada."
+        },
+        {
+          "name": "Churros & Porras",
+          "desc": "Fried to order, with thick hot chocolate."
+        },
+        {
+          "name": "Torrijas",
+          "desc": "Spanish brioche soaked in milk, caramelised."
+        },
+        {
+          "name": "Tarta de Santiago",
+          "desc": "Galician almond tart, dusted with the cross of Saint James."
+        },
+        {
+          "name": "Crema Catalana",
+          "desc": "Custard with a cracked burnt-sugar top."
+        },
+        {
+          "name": "Ensaimada",
+          "desc": "Mallorca's spiral pastry, light as air."
+        },
+        {
+          "name": "Pastel Vasco",
+          "desc": "Basque cake filled with pastry cream."
+        },
+        {
+          "name": "Butter Croissant",
+          "desc": "Baked every morning."
+        }
+      ],
+      "fresh": [
+        {
+          "name": "Spanish Orange Juice",
+          "desc": "Squeezed in front of you, 100% natural."
+        },
+        {
+          "name": "Horchata",
+          "desc": "Valencian tiger-nut milk, served ice cold."
+        },
+        {
+          "name": "Açaí Bowl",
+          "desc": "Açaí, fresh fruit, granola and honey."
+        },
+        {
+          "name": "Milkshakes",
+          "desc": "Chocolate, vanilla or pistachio."
+        },
+        {
+          "name": "Iced Spanish Latte",
+          "desc": "Our latte over ice."
+        },
+        {
+          "name": "Spanish Mineral Water",
+          "desc": "Still and sparkling, from Spanish springs."
+        }
+      ]
+    }
+  },
+  "space": {
+    "eyebrow": "The space",
+    "title": "A room that glows.",
+    "sub": "Chocolate walls, a burnt-orange lightbox over the bar, cream banquettes and amber lamps on every table.",
+    "captions": [
+      "Evening light through the glass",
+      "Amber lamps, cream banquettes",
+      "Floor-to-ceiling windows",
+      "The espresso station",
+      "Shelves of steel and light",
+      "Evenings at Cocoa"
+    ]
+  },
+  "marquee": [
+    "Specialty beans",
+    "Spanish artisans",
+    "Freshly squeezed",
+    "Open late",
+    "Halal certified",
+    "Baked daily"
+  ],
+  "visit": {
+    "eyebrow": "Visit us",
+    "title": "Find your table.",
+    "addressLabel": "Address",
+    "address": "Address coming soon · Dubai, UAE",
+    "hoursLabel": "Opening hours",
+    "hours": [
+      {
+        "days": "Sunday – Thursday",
+        "time": "7:00 – 00:00"
+      },
+      {
+        "days": "Friday – Saturday",
+        "time": "7:00 – 02:00"
+      }
+    ],
+    "contactLabel": "Contact",
+    "whatsapp": "Message us on WhatsApp",
+    "instagram": "Follow on Instagram",
+    "directions": "Get directions"
+  },
+  "footer": {
+    "tag": "Specialty coffee & Spanish pastry · Dubai",
+    "rights": "All rights reserved."
+  },
+  "wa": {
+    "message": "Hello Coffee Cocoa, I would like to reserve a table."
+  }
+}

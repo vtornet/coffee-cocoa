@@ -1,0 +1,20 @@
+---
+// Raíz: envía a /ar si el navegador está en árabe, si no a /en.
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coffee Cocoa · Dubai</title>
+  <link rel="alternate" hreflang="en" href="/en/" />
+  <link rel="alternate" hreflang="ar" href="/ar/" />
+  <meta http-equiv="refresh" content="1; url=/en/" />
+  <style>html,body{margin:0;height:100%;background:#1A0F0A}</style>
+  <script is:inline>
+    var l = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+    location.replace(l.toLowerCase().indexOf('ar') === 0 ? '/ar/' : '/en/');
+  </script>
+</head>
+<body></body>
+</html>
