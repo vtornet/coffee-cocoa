@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 
-// Dominio propio: https://coffecocoa.com (servido por GitHub Pages)
+// Dominio propio: https://coffeecocoa.ae (servido por GitHub Pages)
 export default defineConfig({
-  site: process.env.SITE || 'https://coffecocoa.com',
+  site: process.env.SITE || 'https://coffeecocoa.ae',
   base: process.env.BASE_PATH || '/',
   trailingSlash: 'ignore',
 });

@@ -19,7 +19,7 @@ Importa el repo. Framework: **Astro**. Build: `npm run build`. Carpeta de salida
 
 | Qué | Archivo |
 | --- | --- |
-| WhatsApp, teléfono, Instagram, Google Maps, dominio (coffecocoa.com) | `src/config.js` (y `site` en `astro.config.mjs`) |
+| WhatsApp, teléfono, Instagram, Google Maps, dominio (coffeecocoa.ae) | `src/config.js` (y `site` en `astro.config.mjs`) |
 | Textos en inglés / árabe, carta, horarios | `src/i18n/en.json` · `src/i18n/ar.json` |
 | Precios | añade `"price": "28"` a cualquier producto en los JSON |
 | Imágenes | `public/images/` |
@@ -30,7 +30,7 @@ Importa el repo. Framework: **Astro**. Build: `npm run build`. Carpeta de salida
 
 - [ ] Número real de WhatsApp, teléfono, Instagram y enlace de Google Maps (`src/config.js`)
 - [ ] Dirección y horario reales (`visit` en los JSON)
-- [x] Dominio: coffecocoa.com
+- [x] Dominio: coffeecocoa.ae
 - [ ] Revisión del texto árabe por un hablante nativo
 - [ ] Sustituir los renders por fotos reales cuando abra el local
 - [ ] Confirmar nombre de marca en logo/título ("COCOA" vs "Coffee Cocoa")

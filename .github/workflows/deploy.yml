@@ -1,7 +1,7 @@
 name: Deploy to GitHub Pages
 
 # Cada push a main compila la web y la publica en la rama gh-pages.
-# GitHub Pages sirve esa rama en https://coffecocoa.com
+# GitHub Pages sirve esa rama en https://coffeecocoa.ae
 
 on:
   push:
@@ -33,4 +33,4 @@ jobs:
           publish_dir: dist
           publish_branch: gh-pages
           force_orphan: true
-          cname: coffecocoa.com
+          cname: coffeecocoa.ae
