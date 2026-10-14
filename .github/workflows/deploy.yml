@@ -1,7 +1,7 @@
 name: Deploy to GitHub Pages
 
 # Cada push a main compila la web y la publica en la rama gh-pages.
-# GitHub Pages sirve esa rama en https://vtornet.github.io/coffee-cocoa/
+# GitHub Pages sirve esa rama en https://coffecocoa.com
 
 on:
   push:
@@ -26,9 +26,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-        env:
-          SITE: https://vtornet.github.io
-          BASE_PATH: /coffee-cocoa
       - run: touch dist/.nojekyll
       - uses: peaceiris/actions-gh-pages@v4
         with:
@@ -36,3 +33,4 @@ jobs:
           publish_dir: dist
           publish_branch: gh-pages
           force_orphan: true
+          cname: coffecocoa.com

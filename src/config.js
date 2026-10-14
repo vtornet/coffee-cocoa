@@ -2,7 +2,7 @@
 // Datos del local. Cambia aquí y se actualiza en toda la web (EN y AR).
 // ---------------------------------------------------------------------------
 export const site = {
-  url: 'https://coffeecocoa.ae', // TODO: dominio definitivo
+  url: 'https://coffecocoa.com',
   name: 'Coffee Cocoa',
   // TODO: número real de WhatsApp en formato internacional sin "+" ni espacios
   whatsapp: '971500000000',

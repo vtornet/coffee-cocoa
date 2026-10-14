@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://coffeecocoa.ae/sitemap.xml
+Sitemap: https://coffecocoa.com/sitemap.xml
