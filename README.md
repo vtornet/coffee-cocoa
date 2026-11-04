@@ -1,6 +1,6 @@
 # Coffee Cocoa — web (EN / AR)
 
-Web estática para la cafetería Coffee Cocoa (Dubái), en inglés y árabe (RTL).
+Web estática para la cafetería Coffee Cocoa (Sharjah, EAU), en inglés y árabe (RTL).
 Astro + GSAP + Lenis. Fuentes autoalojadas (Cormorant Garamond, Manrope, Noto Kufi Arabic, IBM Plex Sans Arabic).
 
 ## Desarrollo

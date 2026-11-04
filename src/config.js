@@ -9,8 +9,8 @@ export const site = {
   phoneDisplay: '+971 50 000 0000', // TODO
   instagram: 'https://instagram.com/coffeecocoa.dxb', // TODO
   // TODO: enlace de Google Maps del local
-  mapsUrl: 'https://maps.google.com/?q=Dubai',
-  address: { street: '', locality: 'Dubai', country: 'AE' },
+  mapsUrl: 'https://maps.google.com/?q=Sharjah',
+  address: { street: '', locality: 'Sharjah', country: 'AE' },
   // Precios opcionales: añade "price" a cualquier producto en src/i18n/*.json
   currency: 'AED',
 };

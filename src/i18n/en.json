@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Coffee Cocoa — Specialty Coffee & Spanish Pastry in Dubai",
-    "description": "A late-night specialty coffee house in Dubai with artisan pastry from small Spanish bakeries: piononos, churros, torrijas, freshly squeezed Spanish oranges and more."
+    "title": "Coffee Cocoa — Specialty Coffee & Spanish Pastry in Sharjah",
+    "description": "A late-night specialty coffee house in Sharjah with artisan pastry from small Spanish bakeries: piononos, churros, torrijas, freshly squeezed Spanish oranges and more."
   },
   "nav": {
     "story": "Story",
@@ -13,9 +13,9 @@
     "skip": "Skip"
   },
   "hero": {
-    "eyebrow": "Specialty coffee · Spanish pastry · Dubai",
+    "eyebrow": "Specialty coffee · Spanish pastry · Sharjah",
     "line1": "Spanish soul.",
-    "line2": "Dubai nights.",
+    "line2": "Sharjah nights.",
     "sub": "Single-origin coffee, pastry from small family bakeries in Spain and a warm room that stays lit long after sunset.",
     "ctaMenu": "View the menu",
     "ctaReserve": "Reserve on WhatsApp",
@@ -23,7 +23,7 @@
   },
   "story": {
     "eyebrow": "Our story",
-    "title": "From the obradores of Spain to the heart of Dubai.",
+    "title": "From the obradores of Spain to the heart of Sharjah.",
     "p1": "In Spain, the best pastry still comes from small family workshops, the obradores, where recipes pass from one generation to the next. We travelled the country to find them.",
     "p2": "Piononos from Santa Fe, almond tarts from Galicia, churros fried to order. Each one is paired with specialty coffee roasted for the espresso bar and served in a room built for slow evenings.",
     "quote": "Every cup has its origin. Every pastry has its story."
@@ -151,7 +151,7 @@
     "eyebrow": "Visit us",
     "title": "Find your table.",
     "addressLabel": "Address",
-    "address": "Address coming soon · Dubai, UAE",
+    "address": "Address coming soon · Sharjah, UAE",
     "hoursLabel": "Opening hours",
     "hours": [
       {
@@ -169,7 +169,7 @@
     "directions": "Get directions"
   },
   "footer": {
-    "tag": "Specialty coffee & Spanish pastry · Dubai",
+    "tag": "Specialty coffee & Spanish pastry · Sharjah",
     "rights": "All rights reserved."
   },
   "wa": {
