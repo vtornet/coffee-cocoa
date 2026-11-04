@@ -14,3 +14,7 @@ export const site = {
   // Precios opcionales: añade "price" a cualquier producto en src/i18n/*.json
   currency: 'AED',
 };
+
+// Tipografía oficial Doran: pon los archivos .woff2 en public/fonts/ (ver
+// public/fonts/README.md) y cambia esto a true para activarla.
+site.doranFonts = false;

@@ -2,17 +2,18 @@
 import en from '../i18n/en.json';
 import ar from '../i18n/ar.json';
 import { site } from '../config.js';
-import '@fontsource/cormorant-garamond/400.css';
-import '@fontsource/cormorant-garamond/400-italic.css';
-import '@fontsource/cormorant-garamond/500.css';
-import '@fontsource/manrope/200.css';
-import '@fontsource/manrope/300.css';
-import '@fontsource/manrope/400.css';
-import '@fontsource/manrope/500.css';
-import '@fontsource/noto-kufi-arabic/500.css';
-import '@fontsource/ibm-plex-sans-arabic/300.css';
-import '@fontsource/ibm-plex-sans-arabic/400.css';
-import '@fontsource/ibm-plex-sans-arabic/500.css';
+// Tipografía de marca: Doran (de pago). Mientras no estén sus archivos,
+// se usan Bodoni Moda (latín) y Noto Naskh Arabic (árabe), las más parecidas.
+import '@fontsource-variable/bodoni-moda/opsz.css';
+import '@fontsource-variable/bodoni-moda/opsz-italic.css';
+import '@fontsource/noto-naskh-arabic/400.css';
+import '@fontsource/noto-naskh-arabic/500.css';
+import '@fontsource/noto-naskh-arabic/600.css';
+import '@fontsource/noto-naskh-arabic/700.css';
+// Logos oficiales (libro de marca), en vector y con color heredado (currentColor)
+import wordmarkSvg from '../assets/logos/cocoa-wordmark.svg?raw';
+import iconSvg from '../assets/logos/cocoa-icon.svg?raw';
+import emblemSvg from '../assets/logos/cocoa-emblem.svg?raw';
 import '../styles/global.css';
 
 const { lang } = Astro.props;
@@ -35,7 +36,6 @@ const gallery = [
   '15-zona-sofa-acero',
 ];
 const tabs = ['coffee', 'pastry', 'fresh'];
-const letters = ['C', 'O', 'C', 'O', 'A'];
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -72,6 +72,7 @@ const jsonLd = {
   <meta property="og:image" content={`${abs}/images/16-pared-estanteria-naranja.webp`} />
   <meta property="og:locale" content={lang === 'ar' ? 'ar_AE' : 'en_AE'} />
   <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+  {site.doranFonts && <link rel="stylesheet" href={`${base}/fonts/doran.css`} />}
   <link rel="preload" as="image" href={img('16-pared-estanteria-naranja')} />
   <script is:inline>
     try {
@@ -86,15 +87,16 @@ const jsonLd = {
   <!-- Intro -->
   <div id="intro" aria-hidden="true">
     <div class="intro-light"></div>
-    <div class="intro-word">
-      {letters.map((l) => <span class="intro-letter">{l}</span>)}
+    <div class="intro-logo">
+      <span class="intro-icon" set:html={iconSvg} />
+      <span class="intro-word" set:html={wordmarkSvg} />
     </div>
     <button class="intro-skip" type="button">{t.nav.skip}</button>
   </div>
 
   <!-- Header -->
   <header class="site-header">
-    <a href={`${base}/${lang}/`} class="wordmark" aria-label={site.name}>COCOA</a>
+    <a href={`${base}/${lang}/`} class="wordmark" aria-label="Cocoa Outlet Café"><span set:html={wordmarkSvg} /></a>
     <nav class="main-nav" aria-label="Main">
       <a href="#story">{t.nav.story}</a>
       <a href="#menu">{t.nav.menu}</a>
@@ -244,7 +246,7 @@ const jsonLd = {
   </main>
 
   <footer class="site-footer">
-    <div class="footer-word">COCOA</div>
+    <div class="footer-logo" role="img" aria-label="Cocoa Outlet Café" set:html={emblemSvg} />
     <p>{t.footer.tag}</p>
     <div class="footer-row">
       <span>© {year} {site.name}. {t.footer.rights}</span>

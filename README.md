@@ -39,3 +39,8 @@ Importa el repo. Framework: **Astro**. Build: `npm run build`. Carpeta de salida
 
 - La animación de entrada se muestra una vez por sesión y se puede saltar. Con "reducir movimiento" activado en el sistema no hay animaciones.
 - `/` redirige a `/ar/` si el navegador está en árabe, y a `/en/` en otro caso.
+
+## Identidad de marca (libro de marca, oct. 2026)
+
+- Logos en vector: `src/assets/logos/` (usados en la web, toman el color del texto) y `public/brand/` (en marrón de marca, para descargar).
+- Tipografía oficial: **Doran** (latín y árabe), de pago. Instrucciones para activarla en `public/fonts/README.md`. Mientras tanto: Bodoni Moda (latín) y Noto Naskh Arabic (árabe).

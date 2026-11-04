@@ -60,8 +60,9 @@ if (reduced) {
 } else if (intro) {
   if (lenis) lenis.stop();
   const light = intro.querySelector('.intro-light');
-  const letters = intro.querySelectorAll('.intro-letter');
-  const lightH = Math.min(window.innerHeight * 0.34, 260);
+  const icon = intro.querySelector('.intro-icon');
+  const word = intro.querySelector('.intro-word');
+  const lightH = Math.min(window.innerHeight * 0.34, 240);
 
   const tl = gsap.timeline({
     onComplete: finish,
@@ -69,12 +70,18 @@ if (reduced) {
   tl.to(light, { scaleX: 1, duration: 0.65, ease: 'power3.inOut' })
     .to(light, { height: lightH, duration: 0.55, ease: 'power3.inOut' }, '-=0.05')
     .fromTo(
-      letters,
-      { opacity: 0, y: 24, filter: 'blur(8px)' },
-      { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.5, stagger: 0.07, ease: 'power3.out' },
+      icon,
+      { opacity: 0, scale: 0.7, filter: 'blur(8px)' },
+      { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.55, ease: 'power3.out' },
       '-=0.25'
     )
-    .to({}, { duration: 0.25 })
+    .fromTo(
+      word,
+      { clipPath: 'inset(0 100% 0 0)' },
+      { clipPath: 'inset(0 0% 0 0)', duration: 0.7, ease: 'power3.inOut' },
+      '-=0.2'
+    )
+    .to({}, { duration: 0.3 })
     .add('lift')
     .to(intro, { clipPath: 'inset(0 0 100% 0)', duration: 0.9, ease: 'power4.inOut' }, 'lift')
     .add(heroIn(), 'lift+=0.15');

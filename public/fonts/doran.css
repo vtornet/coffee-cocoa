@@ -1,0 +1,6 @@
+/* Tipografía oficial de marca: Doran (latín + árabe).
+   Copia aquí los archivos con estos nombres exactos y activa
+   site.doranFonts = true en src/config.js. */
+@font-face { font-family: 'Doran'; font-weight: 300; font-display: swap; src: url('./Doran-Light.woff2') format('woff2'); }
+@font-face { font-family: 'Doran'; font-weight: 400; font-display: swap; src: url('./Doran-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'Doran'; font-weight: 700; font-display: swap; src: url('./Doran-Bold.woff2') format('woff2'); }
